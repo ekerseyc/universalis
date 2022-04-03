@@ -4,13 +4,13 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
-router.get('/api/products', (req, res) => {
+router.get('/', async (req, res) => {
   const productData = await Product.findAll({});
   res.json(productData);
 });
 
 // get one product
-router.get('/api/products/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   const productData = await Product.findByPk(
     req.params.id, {
     include: [{
@@ -23,7 +23,7 @@ router.get('/api/products/:id', (req, res) => {
 });
 
 // create new product
-router.post('/api/products', (req, res) => {
+router.post('/', async (req, res) => {
     /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -55,7 +55,7 @@ router.post('/api/products', (req, res) => {
 });
 
 // update product
-router.put('/api/products/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
@@ -96,7 +96,7 @@ router.put('/api/products/:id', (req, res) => {
     });
 });
 
-router.delete('/api/products/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   const productData = await Product.destroy({
     where: {
       id: req.params.id
