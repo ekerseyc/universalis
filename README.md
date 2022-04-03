@@ -22,7 +22,9 @@ This is a back end application that stores seeded data of products, their prices
 
 ## Visuals
 [Tags Example](https://youtu.be/e4bBh0SyEZ4)
+
 [Categories Example](https://youtu.be/4kOqiedsmOg)
+
 [Products Example](https://youtu.be/7L7rDV9Dfzg)
 
 ## Technologies
